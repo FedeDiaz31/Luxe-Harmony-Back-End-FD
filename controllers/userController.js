@@ -102,6 +102,7 @@ async function create(req, res) {
     firstname: bodyData.firstname,
     lastname: bodyData.lastname,
     email: bodyData.email,
+    phone: bodyData.phone,
     password: await bcrypt.hash(`${bodyData.password}`, 8),
     address: {
       country: bodyData.country,
@@ -201,7 +202,6 @@ async function edit(req, res) {
     {
       firstname: bodyData.firstname,
       lastname: bodyData.lastname,
-      // password: await bcrypt.hash(`${bodyData.password}`, 8),
       email: bodyData.email,
       phone: bodyData.phone,
       address: {

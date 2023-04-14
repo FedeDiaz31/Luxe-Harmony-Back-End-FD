@@ -22,7 +22,7 @@ async function lastOrders(req, res) {
 // Display the specified resource.
 async function show(req, res) {
   const orderId = req.params.id;
-  const order = await Order.findById(orderId);
+  const order = await Order.findById(orderId).populate("status");
   res.json(order);
 }
 
