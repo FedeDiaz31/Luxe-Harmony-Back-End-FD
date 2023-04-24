@@ -71,7 +71,10 @@ async function update(req, res) {
 }
 
 // Remove the specified resource from storage.
-async function destroy(req, res) {}
+async function destroy(req, res) {
+  const deleteOrder = await Order.findByIdAndDelete(req.params.id);
+  return res.json(`La orden ${deleteOrder} ha sido eliminada`);
+}
 
 module.exports = {
   index,
