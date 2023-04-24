@@ -4,12 +4,12 @@ const { expressjwt: checkJwt } = require("express-jwt");
 /* const AdminAuthenticate = require('../middlewares/adminAuthenticate'); */
 const orderController = require("../controllers/orderController");
 
-// router.use(
-//   checkJwt({
-//     secret: process.env.SESSION_SECRET,
-//     algorithms: ["HS256"],
-//   })
-// );
+router.use(
+  checkJwt({
+    secret: process.env.SESSION_SECRET,
+    algorithms: ["HS256"],
+  })
+);
 
 router.get("/", orderController.index);
 router.get("/last", orderController.lastOrders);
