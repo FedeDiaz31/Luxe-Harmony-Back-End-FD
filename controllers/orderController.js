@@ -15,7 +15,6 @@ async function lastOrders(req, res) {
     .limit(10)
     .populate("user")
     .populate("status");
-  /*   console.log(orders); */
   res.json(orders);
 }
 
