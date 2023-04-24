@@ -13,7 +13,7 @@ const orderController = require("../controllers/orderController");
 
 router.get("/", orderController.index);
 router.get("/last", orderController.lastOrders);
-router.get("/:id", orderController.destroy);
+router.get("/:id", orderController.show);
 router.post("/", orderController.store);
 router.patch("/:id", orderController.update);
 router.delete("/:id", orderController.destroy);
